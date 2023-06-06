@@ -4,12 +4,13 @@ import React from 'react';
 // import './App.css';
 
 
-import Generator from './Component/Generator';
+//import Generator from './Shopping/shoppingList';
+import ShoppingList from './Shopping/shoppingList';
 
 function App() {
   return (
    
-   <Generator/>
+   <ShoppingList/>
   );
 }
 

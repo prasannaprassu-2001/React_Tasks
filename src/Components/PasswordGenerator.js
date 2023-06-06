@@ -1,3 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
+
+
 import React, { useEffect, useState } from 'react';
 import './PasswordGenerator.css';
 import copyIcon from '../assets/copy-icon.svg';
@@ -20,7 +24,6 @@ function PasswordGenerator() {
 
     useEffect(() => {
       generatePassword()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[passwordLength]);
 
   
