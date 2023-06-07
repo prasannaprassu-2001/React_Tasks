@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './shoppingList.css'
+import './shoppingList.scss'
 
-class ShoppingList extends Component {
+class shoppingList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -76,4 +76,4 @@ class ShoppingList extends Component {
   }
 }
 
-export default ShoppingList;
+export default shoppingList;
