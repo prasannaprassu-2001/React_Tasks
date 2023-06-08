@@ -1,10 +1,8 @@
-import ShoppingList from './component/shoppingList'
-import './App.css';
-
+import List from  './component/list'
 function App() {
   return (
     <div className="App">
-     <ShoppingList />
+      <List />
     </div>
   );
 }

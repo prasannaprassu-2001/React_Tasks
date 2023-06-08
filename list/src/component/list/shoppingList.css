@@ -8,6 +8,7 @@
 .shopping-list-app h1 {
   font-size: 24px;
   margin-bottom: 20px;
+  margin-top: 40px;
 }
 .shopping-list-app div {
   display: flex;
@@ -60,4 +61,28 @@
 }
 .shopping-list-app ul li button {
   margin-left: 10px;
+}
+
+.shopping-list-app h1 img {
+  height: 50px;
+  position: absolute;
+  width: 60px;
+  border-radius: 50px;
+  margin-left: 30px;
+  margin-top: -15px;
+}
+
+.shopping-list-app h1 {
+  margin-left: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+  .shopping-list-app h1 {
+    margin-left: 30px;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .shopping-list-app h1 {
+    margin-left: 0px;
+  }
 }/*# sourceMappingURL=shoppingList.css.map */
