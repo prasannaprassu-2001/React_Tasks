@@ -1,60 +1,59 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from 'react';
 import "./shoppingList.scss";
-
-
-class ListComponent extends PureComponent {
+import Shopping from "../images/shopping-card-svgrepo-com.svg";
+export default class ListComponent extends PureComponent {
   render() {
-    const { items, newItem,handleChange ,addItem,removeItem,editItem, saveItem,editIndex} = this.props;
-      
-   
+    const { tasks, displayModal, editedTask, editNew } = this.props;
+
     return (
       <div>
-       
-        <div className="shopping-list-app">
-        <h1>Shopping List App 
-          <img src="https://www.pngitem.com/pimgs/m/161-1612826_28-collection-of-shopping-clipart-no-background-shopping.png" alt="" />
+        <h1 className='name'>Shopping List App
+        <img src={Shopping} alt="" />
 
-           </h1>
-       
-        <div>
-          <input
-            type="text"
-            value={newItem}
-            onChange={handleChange}
-            placeholder="Enter an item"
-          />
-          <button onClick={addItem}>Add</button>
-        </div>
+        </h1>
+
+        <input
+          type="text"
+          className='input-field'
+          value={editedTask}
+          onChange={this.props.handleTaskChange}
+          placeholder="Enter task..."
+        />
+        <button onClick={this.props.addTask}>Add Task</button>
+
         <ul>
-            {items.map((item, index) => (
-              <li key={index}>
-                {editIndex === index ? (
-                  <>
-                  <input
-                    type="text"
-                    value={newItem}
-                    onChange={handleChange}
-                  />
-                  
-                  </>
-                  
-                ) : (
-                  item
-                )}
-                {editIndex === index ? (
-                  <button onClick={() => saveItem(index)}>Save</button>
-                ) : (
-                  <>
-                    <button onClick={removeItem}>Delete</button>
-                    <button onClick={() => editItem(index)}>Edit</button>
-                  </>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
+          {tasks.map((task, index) => (
+            <li key={index} className='task-name'>
+              <div className='task-name-2'>
+              {task}
+              </div>
+              <div className='task-name-edit'>
+              <button  onClick={() => this.props.popup(index)}>Edit</button>
+              <button onClick={() => this.props.deleteTask(index)}>Delete</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        {displayModal && (
+          <div id="editModal" className="modal">
+            <span onClick={this.props.closeModal} className="close" title="Close Modal">
+              &times;
+            </span>
+            <div className="modal-content">
+              <h1>Edit Task</h1>
+              <input type="text" value={editNew} onChange={this.props.handleTaskChanges} />
+              <button type="button" onClick={this.props.addTask}>
+                Save
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
+
 }
-export default ListComponent
+
+
+
