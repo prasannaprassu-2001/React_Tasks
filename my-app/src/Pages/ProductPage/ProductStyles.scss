@@ -1,0 +1,56 @@
+.flex{
+    max-width:75%;
+    margin: auto;
+    height:80vh;
+    margin-top: 5%;
+    background: white;
+    box-shadow: 0px 5px 200px 0px black;
+
+    &-left{
+        width:50%;
+        padding: 30px;
+    }
+    &-main_image{
+           width:auto;
+           height:auto;
+        }
+        &-right{
+                 padding: 50px 100px 50px 50px;
+                 margin-left: 90%;
+                 margin-top: -90%;
+                 width:100%;
+                 padding: 100px;
+             }
+            
+
+.tit{
+   color:#af827d;
+   margin:100px 0 50px 0;
+   font-size:25px;
+   display: flex;
+  
+}.des,small{
+    color:#837d7c;
+    width:150%;
+}
+
+.pri{
+    color:#af827d;
+
+}
+.des{
+    margin:20px 0 50px 0;
+    line-height:25px;
+   
+}
+button{
+    width:100%;
+    padding: 10px;
+    border:none;
+    outline:none;
+    background: #c1908b;
+    color:white;
+    margin-top:10%;
+    border-radius: 30px;
+}
+}
