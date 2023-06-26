@@ -5,26 +5,25 @@ export default class Productcomponent extends PureComponent {
   render() {
     const { data } = this.props;
     return (
-      <div className="flex">
-        <div className="flex-left">
-          <div className="flex-main_image">
+      <div>
+        <div className="product">
+          <div className="product-data">
             <img
               src={data.image}
-              className="slide"
-              height={500}
-              width={500}
+              className="product-image"
               alt=""
             />
+            <br /> <br />
+          <button className="product-btn">Add To Bag</button>
           </div>
-          <div className="flex-right">
-            <h3 className="tit">{data.title}</h3>
-            <p className="des">{data.description}</p>
-            <h4 className="pri">
+          <div className="product-details">
+            <h3 className="product-title">{data.title}</h3>
+            <p className="product-des">{data.description}</p>
+            <h4 className="product-price">
               <small>$</small>
               {data.price}
             </h4>
           </div>
-          <button>Add To Bag</button>
         </div>
       </div>
     );
