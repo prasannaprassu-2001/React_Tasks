@@ -1,0 +1,134 @@
+@mixin btn {
+  height: 3.2rem;
+  width: 80%;
+  margin: 1.3rem 1.6rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.name {
+  box-shadow: 0 0.3rem 0.5rem 0 rgba(218, 186, 186, 0.2);
+  height: 4rem;
+  font-size: 1.3rem;
+  color: rgb(3, 19, 3);
+  font-family: sans-serif;
+  width: 90%;
+}
+
+.product {
+  position: static;
+  // margin: 12%;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  // width: 400px;
+
+  &-home {
+    text-decoration: none;
+    margin-left: 50%;
+    position: absolute;
+    font-size: 1.2rem;
+    color: rgb(7, 14, 20);
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: black;
+      color: rgb(40, 9, 221);
+    }
+  }
+
+  &-img {
+    margin-top: 10rem;
+    margin-left: 10%;
+    width: 350px;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.2);
+    &-img {
+      height: 350px;
+      width: 350px;
+    }
+  }
+
+  &-cart {
+    @include btn();
+    background-color: rgb(8, 126, 177);
+  }
+
+  // &-buy {
+  //     @include btn();
+  //     background-color: rgb(245, 72, 10);
+  // }
+
+  &-details {
+    list-style: none;
+  }
+  &-title {
+    color: #282c3f;
+    padding: 0 20px 0 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &-rating {
+    display: flex;
+  }
+
+  &-rate {
+    color: rgb(7, 7, 7);
+    line-height: 2;
+    &-icon {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  &-count {
+    color: #8f988f;
+    line-height: 2;
+  }
+
+  &-off {
+    line-height: 2;
+
+    color: green;
+    font-weight: 500;
+  }
+
+  &-price {
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    & strike {
+      padding: 0 1.4rem;
+      font-size: 1.1rem;
+
+      color: #8f988f;
+    }
+
+    & span {
+      color: green;
+      font-size: 1.2rem;
+    }
+  }
+
+  &-cate {
+    color: rgb(108, 79, 106);
+    font-size: 1.2rem;
+    line-height: 2;
+  }
+
+  &-desc {
+    width: 15.6rem;
+  }
+}
+
+.header {
+  position: static;
+}
+
+@media only screen and (max-width: 780px) {
+  .product {
+    flex-direction: column;
+    overflow: hidden;
+  }
+}
