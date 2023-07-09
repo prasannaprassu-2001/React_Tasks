@@ -3,82 +3,6 @@ import TodoListcomponent from "./TodoList.component";
 import { connect } from "react-redux";
 import { addTask, editTask, deleteTask } from "../../Redux/Action";
 
-class TodoListcontainer extends PureComponent {
-  state = {
-    createTask: false,
-    taskName: "",
-    description: "",
-  };
-
-  handleClick = () => {
-    this.setState((prev) => ({
-      createTask: !prev.createTask,
-    }));
-  };
-
-  handleChange = (e) => {
-    const { name, value } = e.target;
-
-    this.setState({
-      [name]: value,
-    });
-  };
-
-
-  addTask = () => {
-    const { taskName, description } = this.state;
-    const task = { taskName, description };
-  
-    this.props.addTask(task);
-  
-    this.setState({
-      taskName: "",
-      description: "",
-      createTask:false,
-    });
-  };
-  
-  
-
-  handleEdit = (index, task) => {
-    this.props.handleEdit(index, task);
-  };
-
-  handleSave = () => {
-    const { editIndex, editedTaskName, editedDescription } = this.props;
-    const task = { taskName: editedTaskName, description: editedDescription };
-
-    this.props.handleEdit(editIndex, task);
-  };
-
-  handleDelete = (index) => {
-    this.props.handleDelete(index);
-  };
-
-  render() {
-    const { createTask,taskList, taskName, description } = this.state;
-    const {  editIndex, editedTaskName, editedDescription } = this.props;
-
-    return (
-      <TodoListcomponent
-        createTask={createTask}
-        taskName={taskName}
-        description={description}
-        taskList={taskList}
-        editIndex={editIndex}
-        editedTaskName={editedTaskName}
-        editedDescription={editedDescription}
-        handleClick={this.handleClick}
-        handleChange={this.handleChange}
-        addTask={this.addTask}
-        handleEdit={this.handleEdit}
-        handleSave={this.handleSave}
-        handleDelete={this.handleDelete}
-      />
-    );
-  }
-}
-
 const mapStateToProps = (state) => {
   return {
     taskList: state.taskList,
@@ -95,5 +19,116 @@ const mapDispatchToProps = (dispatch) => {
     handleDelete: (index) => dispatch(deleteTask(index)),
   };
 };
+
+class TodoListcontainer extends PureComponent {
+  state = {
+    createTask: false,
+    edit: false,
+    taskName: "",
+    description: "",
+    index: 0,
+    error: "",
+  };
+
+  handleClick = () => {
+    this.setState((prev) => ({
+      createTask: !prev.createTask,
+    }));
+  };
+
+  handleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  NewTask = () => {
+    const { taskName, description } = this.state;
+
+    if (taskName === "") {
+      if (description === "") {
+        this.setState({
+          error: "Please enter the required  fields",
+        });
+      }
+    } else if (taskName === "") {
+      this.setState({
+        error: "Please enter the title field",
+      });
+    } else if (description === "") {
+      this.setState({
+        error: "Please enter the content field",
+      });
+    } else {
+      const data = {
+        editedTaskName: taskName,
+        editedDescription: description,
+      };
+      this.props.addTask(data);
+      this.setState({
+        taskName: "",
+        description: "",
+        createTask: false,
+        error: "",
+      });
+    }
+  };
+  handleEditt = () => {
+    this.setState((prev) => ({
+      edit: !prev.edit,
+    }));
+  };
+  HandleEdit = (e) => {
+    console.log("clicked", e.target);
+    this.props.taskList.filter((data, index) => {
+      if (index === JSON.parse(e)) {
+        this.setState({
+          index: JSON.parse(e),
+          taskName: data.editedTaskName,
+          description: data.editedDescription,
+        });
+      }
+    });
+    this.setState((prev) => ({
+      edit: !prev.edit,
+    }));
+  };
+
+  handleSave = (e) => {
+    const editIndex = JSON.parse(e.target.value);
+    const task = {
+      editedTaskName: this.state.taskName,
+      editedDescription: this.state.description,
+    };
+    this.props.handleEdit(editIndex, task);
+    this.setState((prev) => ({
+      edit: !prev.edit,
+    }));
+  };
+
+  handleDelete = (index) => {
+    this.props.handleDelete(index);
+  };
+
+  render() {
+    const { createTask } = this.state;
+
+    return (
+      <TodoListcomponent
+        {...this.state}
+        {...this.props}
+        createTask={createTask}
+        handleClick={this.handleClick}
+        handleChange={this.handleChange}
+        NewTask={this.NewTask}
+        HandleEdit={this.HandleEdit}
+        handleSave={this.handleSave}
+        handleDelete={this.handleDelete}
+        handleEditt={this.handleEditt}
+      />
+    );
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoListcontainer);

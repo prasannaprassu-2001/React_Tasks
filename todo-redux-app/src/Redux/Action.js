@@ -10,10 +10,10 @@ export const addTask = (task) => {
   };
 }; 
 
-export const editTask = (index, task) => {
+export const editTask = (editIndex, task) => {
   return {
     type: EDIT_TASK,
-    payload: { index, task },
+    payload: { editIndex, task },
   };
 };
 

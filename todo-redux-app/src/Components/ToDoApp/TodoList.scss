@@ -1,69 +1,68 @@
-@import '../../Sass/mixin';
+@import "../../Sass/mixin";
 
-.task{
-    text-align: center;
-    font-size:35px;
-    height:200px;
-    width:100%;
-    background-color: #3276e4;
-    padding-top: 50px;
+.task {
+  text-align: center;
+  font-size: 35px;
+  height: 200px;
+  width: 100%;
+  background-color: #dce3ee;
+  padding-top: 50px;
 
-&-btn{
-    background-color:rgb(235, 229, 227);
-    border-radius:5px;
+  &-btn {
+    background-color: rgb(235, 229, 227);
+    border-radius: 5px;
     width: 150px;
-    height:50px;
-    border:none;
+    height: 50px;
+    border: none;
+  }
+}
+.Addtask-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid rgba(136, 136, 136, 0.521);
+  width: 30%;
+  height: 50%;
+  position: absolute;
+  top: 150px;
+  left: 35%;
+  background-color: #dce3ee;
+  border-radius: 10px;
 
-}
-}
-.Addtask-container{
-display:flex;
-align-items: center;
-flex-direction: column;
-border:2px solid rgba(136, 136, 136, 0.521);
-width:30%;
-height:50%;
-position: absolute;
-top:150px;
-left:35%;
-background-color: #f0d1cc75;
-border-radius: 10px;
-.Addtask-containerTitle{
-    height:20%;
-    display:flex;
-    width:90%;
+  .Addtask-containerTitle {
+    height: 20%;
+    display: flex;
+    width: 90%;
     justify-content: space-evenly;
     margin-top: 50px;
     align-items: center;
-    font-size:30px;
-    input{
-        width:55%;
-        height:30%;
-        border:none;
-        border-radius:5px;
+    font-size: 30px;
+    input {
+      width: 45%;
+      height: 30%;
+      border: none;
+      border-radius: 5px;
     }
-}
-.Addtask-container-title{
- font-family: 'Courier New', Courier, monospace;
- font-weight: 800;
-
-}
-.Addtask-containerContent{
-    height:20%;
-    display:flex;
-    width:90%;
+  }
+  .Addtask-container-title {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 800;
+  }
+  .Addtask-containerContent {
+    height: 20%;
+    display: flex;
+    width: 90%;
     justify-content: space-evenly;
     align-items: center;
-    font-size:30px;
-    textarea{
-        width:60%;
-        height:60%;
-        border:none;
+    font-size: 30px;
+    textarea {
+      width: 60%;
+      height: 60%;
+      border: none;
     }
-}
+  }
 
-.btn{
+  .btn {
     width: 55%;
     height: 50%;
     display: flex;
@@ -72,47 +71,100 @@ border-radius: 10px;
     top: 10px;
     align-items: center;
 
-
-.Addtask-containerSaveBtn{
-    @include primaryButton;
-    width:45%;
-    border-radius: 10px;
-    font-size:20px;
-}
-.Addtask-containerCloseBtn{
-    @include primaryButton;
-    background-color: red;
-    width:45%;
-    border-radius: 10px;
-    font-size:20px;
-}
-
-}
-}
-
-
-.modal {
-    display: block;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-  
-    &-content {
-      background-color: #fefefe;
-      margin: 20% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 400px;
-      left: 50%;
-      transform: translateX(-50%,-50%);
+    .Addtask-containerSaveBtn {
+      @include primaryButton;
+      width: 45%;
+      border-radius: 10px;
+      font-size: 20px;
     }
+    .Addtask-containerCloseBtn {
+      @include primaryButton;
+      background-color: red;
+      width: 45%;
+      border-radius: 10px;
+      font-size: 20px;
+    }
+  }
 }
-.hidden{
-    display: none;
+
+.hidden {
+  display: none;
+}
+.card {
+  width: 330px;
+  height: 230px;
+  align-items: flex-start;
+  border: 2px solid rgba(136, 136, 136, 0.521);
+  border-top: 10px solid #c0e8c4;
+  margin: 30px;
+  background-color: #dce3ee;
+  &-data {
+    float: left;
+  
+  }
+
+  &-title {
+    border: 2px solid #b5c0d1;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #f0f2f5;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+  &-content {
+    font-family: sans-serif;
+    width: 250px;
+    height: 70px;
+  }
+
+  & li {
+    list-style: none;
+
+    .Cont {
+      font-size: 20px;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+  }
+}
+.button {
+  display: flex;
+  position: absolute;
+  margin-left: 185px;
+
+  align-items: stretch;
+  &-Edit {
+    background-color: #7aa6ec;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 2px;
+  }
+  &-Delete {
+    background-color: rgb(245, 67, 67);
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 2px;
+    margin-left: 10px;
+  }
+}
+.error-message {
+  color: red;
+  position: absolute;
+  text-align: center;
+  margin-top: -70px;
+  margin-top: -200px;
+  width: 270px;
+  margin-left: 40%;
+}
+@media only screen and (max-width: 450px) {
+  .Addtask-container {
+    width: auto;
+    left: 20%;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .Addtask-container {
+    width: 50%;
+    left: 20%;
+  }
 }

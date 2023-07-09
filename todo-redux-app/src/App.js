@@ -6,7 +6,6 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className="App">
-      
         <ToDoApp />
       </div>
     </Provider>

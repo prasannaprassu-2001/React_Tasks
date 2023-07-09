@@ -1,51 +1,47 @@
 import { PureComponent } from "react";
 import "./TodoList.scss";
-import { connect } from "react-redux";
-import { addTask, editTask, deleteTask } from "../../Redux/Action"
 class TodoListcomponent extends PureComponent {
   taskData = () => {
-    const { taskList, editIndex, editedDescription, handleChange, handleSave, handleEdit, handleDelete } = this.props;
-  
-    return taskList.map((data, index) => (
-      <div className="card">
-      <ul key={index}>
-        <li>
-          <h1>Title:</h1>
-          {data.taskName}
-        </li>
-        <li>
-          <h2>Content:</h2>
-          {data.description}
-        </li>
-        <li>
-          {index === editIndex ? (
-            <>
-              <textarea
-                value={editedDescription}
-                onChange={handleChange}
-                name="editedDescription"
-              />
-              <button onClick={handleSave}>Save</button>
-              <button onClick={() => handleEdit(-1)}>Cancel</button>
-            </>
-          ) : (
-            <>
-              <button onClick={() => handleEdit(index)}>Edit</button>
-              <button onClick={() => handleDelete(index)}>Delete</button>
-            </>
-          )}
-        </li>
-      </ul>
-      </div>
-    ));
+    const { taskList, HandleEdit, handleDelete } = this.props;
+    return (
+      taskList &&
+      taskList.map((data, index) => (
+        <div className="card-data" key={index}>
+          <div className="card">
+            <ul>
+              <li>
+                <p className="card-title">{data.editedTaskName}</p>
+                <p className="card-content">{data.editedDescription}</p>
+                <>
+                  <button
+                    value={index}
+                    onClick={(e) => HandleEdit(e.target.value)} className="button-Edit"
+                  >
+                    Edit
+                  </button>
+                  <button onClick={() => handleDelete(index)} className="button-Delete">Delete</button>
+                </>
+              </li>
+            </ul>
+          </div>
+        </div>
+    
+      ))
+    );
   };
-  
-
-  
 
   render() {
-    const { handleClick, createTask, handleChange, addTask } = this.props;
-
+    const {
+      handleClick,
+      createTask,
+      handleChange,
+      NewTask,
+      handleSave,
+      error,
+      // data,
+      // editedDescription,
+      // HandleEdit,
+    } = this.props;
     return (
       <>
         <div className="task">
@@ -74,7 +70,7 @@ class TodoListcomponent extends PureComponent {
             />
           </div>
           <div className="btn">
-            <button className="Addtask-containerSaveBtn" onClick={addTask}>
+            <button className="Addtask-containerSaveBtn" onClick={NewTask}>
               Save
             </button>
             <button className="Addtask-containerCloseBtn" onClick={handleClick}>
@@ -82,27 +78,33 @@ class TodoListcomponent extends PureComponent {
             </button>
           </div>
         </div>
+        {error && <p className="error-message">{error}</p>}
         {this.taskData()}
+        <div className={this.props.edit ? "" : "hidden"}>
+          <div className="card-data">
+            <div className="card">
+            <ul>
+              <li>
+                <p >Title -</p>
+                <textarea name="taskName" onChange={handleChange}>
+                  {this.props.taskName}
+                </textarea>
+                <p>Content</p>
+                <textarea onChange={handleChange} name="description">
+                  {this.props.description}
+                </textarea>
+                <button value={this.props.index} onClick={(e) => handleSave(e)}>
+                  Save
+                </button>
+                <button onClick={this.props.handleEditt}>Cancel</button>
+              </li>
+            </ul>
+            </div>
+          </div>
+        </div>
       </>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    taskList: state.taskList,
-    editIndex: state.editIndex,
-    editedDescription: state.editedDescription,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addTask: (task) => dispatch(addTask(task)),
-    handleEdit: (index, task) => dispatch(editTask(index, task)),
-    handleDelete: (index) => dispatch(deleteTask(index)),
-   
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(TodoListcomponent);
+export default TodoListcomponent;
