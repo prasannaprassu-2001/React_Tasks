@@ -17,9 +17,7 @@ export const editTask = (editIndex, task) => {
   };
 };
 
-export const deleteTask = (index) => {
-  return {
-    type: DELETE_TASK,
-    payload: index,
-  };
-};
+export const deleteTask = (index) => ({
+  type: DELETE_TASK,
+  payload: index
+});

@@ -10,22 +10,25 @@ class TodoListcomponent extends PureComponent {
           <div className="card">
             <ul>
               <li>
-                <p className="card-title">{data.editedTaskName}</p>
-                <p className="card-content">{data.editedDescription}</p>
+                <p className="card-title">{data.TaskName}</p>
+                <p className="card-content">{data.Description}</p>
                 <>
                   <button
                     value={index}
-                    onClick={(e) => HandleEdit(e.target.value)} className="button-Edit"
-                  >
+                    onClick={(e) => HandleEdit(e.target.value)}
+                    className="button-Edit">
                     Edit
                   </button>
-                  <button onClick={() => handleDelete(index)} className="button-Delete">Delete</button>
+                  <button
+                    onClick={() => handleDelete(index)}
+                    className ="button-Delete">
+                    Delete
+                  </button>
                 </>
               </li>
             </ul>
           </div>
         </div>
-    
       ))
     );
   };
@@ -38,9 +41,8 @@ class TodoListcomponent extends PureComponent {
       NewTask,
       handleSave,
       error,
-      // data,
-      // editedDescription,
-      // HandleEdit,
+      error2,
+      error3,
     } = this.props;
     return (
       <>
@@ -51,55 +53,97 @@ class TodoListcomponent extends PureComponent {
           </button>
         </div>
         <div className={createTask ? "Addtask-container" : "hidden"}>
-          <div className="Addtask-containerTitle">
-            <p>Title:</p>
-            <input
-              type="text"
-              className="Addtask-container-title"
-              onChange={handleChange}
-              name="taskName"
-            />
-          </div>
-          <div className="Addtask-containerContent">
-            <p>Content: </p>
-            <textarea
-              type="text"
-              className="Addtask-container-title"
-              onChange={handleChange}
-              name="description"
-            />
-          </div>
-          <div className="btn">
-            <button className="Addtask-containerSaveBtn" onClick={NewTask}>
-              Save
-            </button>
-            <button className="Addtask-containerCloseBtn" onClick={handleClick}>
-              Close
-            </button>
+          <div className="Addtask-container-modem">
+            <div className="Addtask-containerTitle">
+            {error && <p className="error-message">{error}</p>}
+              <p>Title:</p>
+              <input
+                type="text"
+                className="Addtask-container-title"
+                value={this.props.taskName === "" ? "" : this.props.taskName}
+                onChange={handleChange}
+                name="taskName"
+               maxLength={20}
+              />
+        {error2 && <p className="error-message2">{error2}</p>}
+
+            </div>
+            <div className="Addtask-containerContent">
+              <p>Content: </p>
+              <textarea
+                type="text"
+                maxLength={80}
+                value={
+                  this.props.description === "" ? "" : this.props.description
+                }
+                className="Addtask-container-title"
+                onChange={handleChange}
+                name="description"
+              />
+        {error3 && <p className="error-message3">{error3}</p>}
+
+            </div>
+            <div className="btn">
+              <button className="Addtask-containerSaveBtn" onClick={NewTask}>
+                Save
+              </button>
+              <button
+                className="Addtask-containerCloseBtn"
+                onClick={handleClick}
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
-        {error && <p className="error-message">{error}</p>}
         {this.taskData()}
         <div className={this.props.edit ? "" : "hidden"}>
-          <div className="card-data">
-            <div className="card">
+          <div className="modal">
             <ul>
               <li>
-                <p >Title -</p>
-                <textarea name="taskName" onChange={handleChange}>
-                  {this.props.taskName}
-                </textarea>
-                <p>Content</p>
-                <textarea onChange={handleChange} name="description">
-                  {this.props.description}
-                </textarea>
-                <button value={this.props.index} onClick={(e) => handleSave(e)}>
-                  Save
-                </button>
-                <button onClick={this.props.handleEditt}>Cancel</button>
+                <div className="modal-content">
+                  <div className="border">
+                    <p>Title -</p>
+                    <textarea
+                      name="taskName"
+                      className="border-edit"
+                      onChange={handleChange}
+                      value={this.props.taskName}
+                      maxLength={80}
+                    >
+                      {this.props.taskName && this.props.taskName}
+                    </textarea>
+                  </div>
+                  <div className="border">
+                    <p>Content</p>
+                    <textarea
+                      onChange={handleChange}
+                      maxLength={80}
+                      className="modal-border"
+                      name="description"
+                      value={this.props.description}
+                    >
+                      {this.props.description && this.props.description}
+                    </textarea>
+                  </div>
+                  <div className="button-data">
+                    <button
+                      value={this.props.index}
+                      onClick={(e) => handleSave(e)}
+                      className="button-Edit"
+                    >
+                      Save
+                    </button>
+                    <button
+                      onClick={this.props.handleEditt}
+                      className="button-Delete"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
               </li>
             </ul>
-            </div>
           </div>
         </div>
       </>

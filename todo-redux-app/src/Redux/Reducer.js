@@ -1,10 +1,9 @@
-
 import { ADD_TASK, EDIT_TASK, DELETE_TASK } from "./Action";
 
 const initialState = {
   taskList: [],
-  editedTaskName: "",
-  editedDescription: ""
+  TaskName: "",
+  Description: ""
 };
 
 const reducer = (state = initialState, action) => {

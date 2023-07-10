@@ -7,8 +7,8 @@ const mapStateToProps = (state) => {
   return {
     taskList: state.taskList,
     editIndex: state.editIndex,
-    editedTaskName: state.editedTaskName,
-    editedDescription: state.editedDescription,
+    TaskName: state.TaskName,
+    Description: state.Description,
   };
 };
 
@@ -28,6 +28,8 @@ class TodoListcontainer extends PureComponent {
     description: "",
     index: 0,
     error: "",
+    error2: "",
+    error3: "",
   };
 
   handleClick = () => {
@@ -46,64 +48,70 @@ class TodoListcontainer extends PureComponent {
   NewTask = () => {
     const { taskName, description } = this.state;
 
-    if (taskName === "") {
-      if (description === "") {
-        this.setState({
-          error: "Please enter the required  fields",
-        });
-      }
-    } else if (taskName === "") {
+    if(taskName === '' && description === ''){
       this.setState({
-        error: "Please enter the title field",
-      });
-    } else if (description === "") {
+        error: "Please enter the required fields",
+        error2:"",
+        error3:"",
+      })
+    } else if(taskName === ''){
       this.setState({
-        error: "Please enter the content field",
-      });
-    } else {
+        error2: "Please enter the title field",
+        error:"",
+        error3:""
+      })
+    }else if(description === ''){
+      this.setState({
+        error3: "Please enter the content field",
+        error:'',
+        error2:"",
+      })
+    }else{
       const data = {
-        editedTaskName: taskName,
-        editedDescription: description,
+        TaskName: taskName,
+        Description: description,
       };
       this.props.addTask(data);
       this.setState({
         taskName: "",
         description: "",
         createTask: false,
-        error: "",
+  
       });
     }
   };
+
   handleEditt = () => {
     this.setState((prev) => ({
       edit: !prev.edit,
     }));
   };
   HandleEdit = (e) => {
-    console.log("clicked", e.target);
+    this.setState((prev) => ({
+      edit: !prev.edit,
+    }));
     this.props.taskList.filter((data, index) => {
       if (index === JSON.parse(e)) {
         this.setState({
           index: JSON.parse(e),
-          taskName: data.editedTaskName,
-          description: data.editedDescription,
+          taskName: data.TaskName,
+          description: data.Description,
         });
       }
     });
-    this.setState((prev) => ({
-      edit: !prev.edit,
-    }));
   };
 
   handleSave = (e) => {
     const editIndex = JSON.parse(e.target.value);
     const task = {
-      editedTaskName: this.state.taskName,
-      editedDescription: this.state.description,
+      TaskName: this.state.taskName,
+      Description: this.state.description,
     };
     this.props.handleEdit(editIndex, task);
     this.setState((prev) => ({
       edit: !prev.edit,
+      taskName: "",
+      description: "",
     }));
   };
 
