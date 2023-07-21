@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Data Display</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <h3>View courses editable H3 title</h3>
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th>COURSE NAME</th>
+        <th>COURSE CODE</th>
+        <th>
+          STUDY MODE<select></select>
+        </th>
+        <th>
+          LOCATION<select></select>
+        </th>
+        <th>
+          CAMPUS<select></select>
+        </th>
+      </tr>
+    </thead>
+    <tbody id="table1">
+
+    </tbody>
+  </table>
+  <table id="table2" class="content-table" style="display: none;">
+
+  </table>
+<div>
+  <button id="less" onclick="showData()">Load More ....</button>
+</div>
+  <script src="./index.js"></script>
+</body>
+
+</html>

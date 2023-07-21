@@ -1,0 +1,128 @@
+{
+  "data": [
+       {
+         "COURSE NAME": "Certificate III in Early Childhood Education and Care",
+         "COURSE CODE": "CHC30121",
+         "STUDY MODE": "Various",
+         "LOCATION": "Various",
+         "CAMPUS": "Various"
+       },
+       {
+         "COURSE NAME": "Hazardous Areas Refresher Training",
+         "COURSE CODE": "NONAC06008",
+         "STUDY MODE": "On campus",
+         "LOCATION": "Greater Brisbane",
+         "CAMPUS": "South Bank"
+       },
+       {
+         "COURSE NAME": "Electrical Installation and Design Theory",
+         "COURSE CODE": "NONAC03029",
+         "STUDY MODE": "Various",
+         "LOCATION": "Various",
+         "CAMPUS": "Various"
+       },
+       {
+         "COURSE NAME": "Certificate III in Electrotechnology Electrician",
+         "COURSE CODE": "UEE30811",
+         "STUDY MODE": "On campus",
+         "LOCATION": "Greater Brisbane",
+         "CAMPUS": "Southbank"
+       },
+       {
+         "COURSE NAME": "Skills Maintenance and Testing for Electrical Licence Renewal",
+         "COURSE CODE": "CHC34621",
+         "STUDY MODE": "Apprentice and traineeship",
+         "LOCATION": "Online",
+         "CAMPUS": "Various"
+       },
+       {
+           "COURSE NAME": "Certificate III in Early Childhood Education and Care",
+           "COURSE CODE": "CHC30121",
+           "STUDY MODE": "Various",
+           "LOCATION": "Various",
+           "CAMPUS": "Various"
+         },
+         {
+           "COURSE NAME": "Hazardous Areas Refresher Training",
+           "COURSE CODE": "NONAC06008",
+           "STUDY MODE": "On campus",
+           "LOCATION": "Greater Brisbane",
+           "CAMPUS": "South Bank"
+         },
+         {
+           "COURSE NAME": "Electrical Installation and Design Theory",
+           "COURSE CODE": "NONAC03029",
+           "STUDY MODE": "Various",
+           "LOCATION": "Various",
+           "CAMPUS": "Various"
+         },
+         {
+           "COURSE NAME": "Certificate III in Electrotechnology Electrician",
+           "COURSE CODE": "UEE30811",
+           "STUDY MODE": "On campus",
+           "LOCATION": "Greater Brisbane",
+           "CAMPUS": "Southbank"
+         },
+         {
+           "COURSE NAME": "Skills Maintenance and Testing for Electrical Licence Renewal",
+           "COURSE CODE": "CHC34621",
+           "STUDY MODE": "Apprentice and traineeship",
+           "LOCATION": "Online",
+           "CAMPUS": "Various"
+         },
+         
+         {
+           "COURSE NAME": "Certificate III in Electrotechnology Electrician",
+           "COURSE CODE": "UEE30811",
+           "STUDY MODE": "On campus",
+           "LOCATION": "Greater Brisbane",
+           "CAMPUS": "Southbank"
+         },
+         {
+           "COURSE NAME": "Skills Maintenance and Testing for Electrical Licence Renewal",
+           "COURSE CODE": "CHC34621",
+           "STUDY MODE": "Apprentice and traineeship",
+           "LOCATION": "Online",
+           "CAMPUS": "Various"
+         }
+     ],
+
+"data2": [
+     
+   {
+     "COURSE NAME": "Electrical Installation and Design Theory",
+     "COURSE CODE": "NONAC03029",
+     "STUDY MODE": "Various",
+     "LOCATION": "Various",
+     "CAMPUS": "Various"
+   },
+   {
+     "COURSE NAME": "Certificate III in Electrotechnology Electrician",
+     "COURSE CODE": "UEE30811",
+     "STUDY MODE": "On campus",
+     "LOCATION": "Greater Brisbane",
+     "CAMPUS": "Southbank"
+   },
+   {
+     "COURSE NAME": "Skills Maintenance and Testing for Electrical Licence Renewal",
+     "COURSE CODE": "CHC34621",
+     "STUDY MODE": "Apprentice and traineeship",
+     "LOCATION": "Online",
+     "CAMPUS": "Various"
+   },
+   {
+     "COURSE NAME": "Qualified Business Person (QBP) Electrical ",
+     "COURSE CODE": "RE30121",
+     "STUDY MODE": "Various",
+     "LOCATION": "Various",
+     "CAMPUS": "Various"
+   },
+   {
+     "COURSE NAME": "Electrical Installation and Design Theory",
+     "COURSE CODE": "NONAC03029",
+     "STUDY MODE": "Various",
+     "LOCATION": "Various",
+     "CAMPUS": "Various"
+   }
+ ]
+}
