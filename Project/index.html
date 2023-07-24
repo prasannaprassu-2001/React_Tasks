@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h3>View courses editable H3 title</h3>
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>COURSE NAME</th>
+          <th>COURSE CODE</th>
+          <th>
+            STUDY MODE<select
+            ></select>
+          </th>
+          <th>
+            LOCATION<select
+            ></select>
+          </th>
+          <th>
+            CAMPUS<select
+            ></select>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><p>Certificate III in Early Childhood Education and Care</p></td>
+          <td>CHC30121</td>
+          <td>Various</td>
+          <td>Various</td>
+          <td>Various</td>
+        </tr>
+        <tr>
+          <td>Hazardous Areas Refresher Training</td>
+          <td>NONAC06008</td>
+          <td>On campus</td>
+          <td>Greater Brisbane</td>
+          <td>South Bank</td>
+        </tr>
+        <tr>
+          <td>Electrical Installation and Design Theory</td>
+          <td>NONAC03029</td>
+          <td>Various</td>
+          <td>Various</td>
+          <td>Various</td>
+        </tr>
+        <tr>
+          <td>Certificate III in Electrotechnology Electrician</td>
+          <td>UEE30811</td>
+          <td>On campus</td>
+          <td>Greater Brisbane</td>
+          <td>Southbank</td>
+        </tr>
+        <tr>
+          <td>Skills Maintenance and Testing for Electrical Licence Renewal</td>
+          <td>CHC34621</td>
+          <td>Apprentice and traineeship</td>
+          <td>Online</td>
+          <td>Various</td>
+        </tr>
+        <tr>
+          <td>
+            Qualified Business Person (QBP) Electrical Contractor Licence Skill
+            set
+          </td>
+          <td>RE30121</td>
+          <td>Various</td>
+          <td>Various</td>
+          <td>Various</td>
+        </tr>
+        <tr>
+          <td>Electrical Installation and Design Theory</td>
+          <td>NONAC03029</td>
+          <td>Various</td>
+          <td>Various</td>
+          <td>Various</td>
+        </tr>
+        <tr>
+          <td>Certificate III in Electrotechnology Electrician</td>
+          <td>UEE30811</td>
+          <td>On campus</td>
+          <td>Greater Brisbane</td>
+          <td>Southbank</td>
+        </tr>
+        <tr>
+          <td>Certificate III in Electrotechnology Electrician</td>
+          <td>UEE30811</td>
+          <td>On campus</td>
+          <td>Greater Brisbane</td>
+          <td>Southbank</td>
+        </tr>
+        <tr>
+          <td>Certificate III in Electrotechnology Electrician</td>
+          <td>UEE30811</td>
+          <td>On campus</td>
+          <td>Greater Brisbane</td>
+          <td>Southbank</td>
+        </tr>
+        <tr>
+          <td>Electrical Installation and Design Theory</td>
+          <td>NONAC03029</td>
+          <td>Various</td>
+          <td>Various</td>
+          <td>Various</td>
+        </tr>
+        <tr>
+          <td>Electrical Installation and Design Theory</td>
+          <td>NONAC03029</td>
+          <td>Various</td>
+          <td>Various</td>
+          <td>Various</td>
+        </tr>
+        <tr>
+          <td>Electrical Installation and Design Theory</td>
+          <td>NONAC03029</td>
+          <td>Various</td>
+          <td>Various</td>
+          <td>Various</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button id="more" onclick="Click()">Load More...</button>
+
+    <div id="list" style="display: none">
+      <table class="content-table">
+        <tbody>
+          <tr>
+            <td>Electrical Installation and Design Theory</td>
+            <td>NONAC03029</td>
+            <td>Various</td>
+            <td>Various</td>
+            <td>Various</td>
+          </tr>
+          <tr>
+            <td>Certificate III in Electrotechnology Electrician</td>
+            <td>UEE30811</td>
+            <td>On campus</td>
+            <td>Greater Brisbane</td>
+            <td>Southbank</td>
+          </tr>
+          <tr>
+            <td>
+              Skills Maintenance and Testing for Electrical Licence Renewal
+            </td>
+            <td>CHC34621</td>
+            <td>Apprentice and traineeship</td>
+            <td>Online</td>
+            <td>Various</td>
+          </tr>
+          <tr>
+            <td>
+              Qualified Business Person (QBP) Electrical Contractor Licence
+              Skill set
+            </td>
+            <td>RE30121</td>
+            <td>Various</td>
+            <td>Various</td>
+            <td>Various</td>
+          </tr>
+          <tr>
+            <td>Electrical Installation and Design Theory</td>
+            <td>NONAC03029</td>
+            <td>Various</td>
+            <td>Various</td>
+            <td>Various</td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="less" onclick="Show()">Load Less...</button>
+    </div>
+
+    <script>
+      let Click = () => {
+        const items = (document.getElementById("list").style.display = "block");
+        const item = (document.getElementById("more").style.display = "none");
+      };
+      let Show = () => {
+        const items = (document.getElementById("list").style.display = "none");
+        const item = (document.getElementById("more").style.display = "block");
+      };
+    </script>
+  </body>
+</html>
