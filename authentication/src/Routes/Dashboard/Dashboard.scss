@@ -1,0 +1,30 @@
+.user{
+    display: flex;
+    background-color: rgb(203, 207, 204);
+    gap: 6rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    line-height:4rem;
+    width:50%;
+    margin-left: 25%;
+    border-radius: 1rem;
+    &-email{
+        width: 14rem;
+    }
+    &-password{
+        width: 8rem;
+    }
+    &-logout{
+  background: rgb(94, 112, 112);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color:#fff;
+  border-radius: 0.6rem;
+  height:10%;
+  margin-top: 1rem;
+    }
+}
+.logout-container{
+    margin-top: 10rem;
+}
