@@ -4,8 +4,8 @@ import "./Login.scss";
 import { Link } from "react-router-dom";
 export default class LoginComponent extends PureComponent {
   render() {
-    const {handleLogin, handleInputChange } = this.props;
-    
+    const {  handleLogin, handleInputChange,emailData,loginSuccess } = this.props;
+
     return (
       <div>
         <nav className="flex-div">
@@ -44,6 +44,15 @@ export default class LoginComponent extends PureComponent {
             </div>
           </div>
         </form>
+       {emailData && <div className="error-msg">
+          <error>Email  already exists. Please use a different email.</error>
+        </div>}
+
+        {loginSuccess && 
+        <div className="login-success">
+          Successfully logined
+        </div>
+        }
       </div>
     );
   }

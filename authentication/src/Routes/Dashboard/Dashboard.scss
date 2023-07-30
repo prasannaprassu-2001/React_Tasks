@@ -2,18 +2,17 @@
     display: flex;
     background-color: rgb(203, 207, 204);
     gap: 6rem;
+
     margin-top: 2rem;
     margin-bottom: 2rem;
     justify-content: center;
     line-height:4rem;
-    width:50%;
-    margin-left: 25%;
     border-radius: 1rem;
     &-email{
-        width: 14rem;
+        width: 13rem;
     }
     &-password{
-        width: 8rem;
+        width: 4rem;
     }
     &-logout{
   background: rgb(94, 112, 112);
@@ -26,5 +25,66 @@
     }
 }
 .logout-container{
-    margin-top: 10rem;
+    display: inline-block;
+    margin-left: 25%;
+
+}
+.logout-success{
+    width: 12rem;
+    color: rgb(6, 6, 8);
+    line-height: 2;
+    background-color: rgba(9, 232, 224, 0.92);
+    position: relative;
+    animation-name: example;
+    animation-duration: 2s;
+    text-align: center;
+    border-radius: 1px 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+}
+
+@keyframes example {
+    0%  { left:50%; top:-1rem;transition-timing-function: ease;}
+    50%  { left:50%; top:-1rem;transition-timing-function: ease;}
+    100%  { left:0%; top:-30rem;}
+  }
+@media only screen and (max-width: 1000px) {
+    .logout-container{
+        display: inline-block;
+        margin-left: 20%;
+    
+    }
+}
+@media only screen and (max-width: 800px) {
+    .logout-container{
+        display: inline-block;
+        margin-left: 10%;
+    
+    }
+}
+@media only screen and (max-width: 600px) {
+    .logout-container{
+        display: inline-block;
+        margin-left: auto;
+    
+    }
+}
+@media only screen and (max-width: 550px) {
+    .logout-container{
+        display: list-item;
+        margin-left: 10%;
+        list-style: none;
+    
+    }
+    .user{
+        display: block;
+        width: 17rem;
+        border-radius: 0;
+}
+}
+
+@media only screen and (max-width: 350px) {
+    .logout-container{
+        margin-left: 0;
+    
+    }
 }

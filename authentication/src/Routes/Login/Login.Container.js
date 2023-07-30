@@ -1,18 +1,23 @@
 import React, { PureComponent } from "react";
 import LoginComponent from "./Login.Component";
-import withNavigate from './withNavigate';
-class LoginContainer extends PureComponent {
+import withNavigate from "./withNavigate";
+
+ class LoginContainer extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
       password: "",
+      emailData: false,
+      loginSuccess: false,
     };
   }
+
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+
 
   handleLogin = (event) => {
     event.preventDefault();
@@ -23,19 +28,32 @@ class LoginContainer extends PureComponent {
     const emailExists = existingLogins.some((login) => login.email === email);
 
     if (emailExists) {
-      alert("Email already exists. Please use a different email.");
+      this.setState({
+        emailData: true,
+      })
+
     } else {
+
+      this.setState({
+        loginSuccess: true,
+      })
+
       existingLogins.push({ email, password });
 
       localStorage.setItem("logins", JSON.stringify(existingLogins));
-      this.props.navigate("/Dashboard")
+    
+      setTimeout(() => {
+        this.props.navigate('./Dashboard');
+      }, 1500);
+    
     }
     this.setState({
-      email: "",
-      password: "",
-    });
+      email:"",
+      password:""
+    })
   };
   render() {
+
     return (
       <div>
         <LoginComponent
@@ -47,4 +65,5 @@ class LoginContainer extends PureComponent {
     );
   }
 }
-export default withNavigate(LoginContainer);
+
+export default withNavigate(LoginContainer)

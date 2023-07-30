@@ -54,9 +54,11 @@ body{
 .content{
   position: absolute;
   top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   text-align: center;
   color:#fff;
-margin-top: -8rem;
+// margin-top: -8rem;
 }
 .content h1{
     font-size: 70px;
@@ -100,16 +102,6 @@ span{
 .mobile{
     &-hide{
         display:none;
-    }
-}
-@media only screen and (max-width: 600px){
-    .content{
-        font-size: 20px;
-    }
-}
-@media only screen and (max-width: 600px){
-    .content{
-        font-weight: 200c;
     }
 }
     

@@ -1,6 +1,10 @@
 import React, { PureComponent } from "react";
 import DashComponent from "./Dash.Component";
 export default class DashContainer extends PureComponent {
+state={
+  logoutSuccess: false,
+}
+
   handleLogout = (email, password) => {
     const logins = JSON.parse(localStorage.getItem("logins")) || [];
 
@@ -12,6 +16,10 @@ export default class DashContainer extends PureComponent {
       logins.splice(indexToDelete, 1);
       localStorage.setItem("logins", JSON.stringify(logins));
       this.forceUpdate();
+      this.setState({
+      logoutSuccess: true,
+
+      })
     }
   };
   render() {
@@ -19,8 +27,10 @@ export default class DashContainer extends PureComponent {
 
     return (
       <div>
-        <DashComponent handleLogout={this.handleLogout}
-        logins={logins}/>
+        <DashComponent 
+        {...this.state}
+        handleLogout={this.handleLogout}  logins={logins}
+        />
       </div>
     );
   }
