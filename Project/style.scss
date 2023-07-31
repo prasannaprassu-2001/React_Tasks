@@ -24,6 +24,10 @@ h3 {
 .content-table th select {
   background-color: rgb(235, 231, 231);
   border: none;
+
+  & option {
+    border-bottom: 2px solid rgb(221, 92, 92);
+  }
 }
 .content-table th,
 .content-table td {
@@ -42,5 +46,20 @@ h3 {
 button {
   margin-left: 30%;
   border-radius: 10px;
-  width: 20rem;
+}
+.sub-menu-1 {
+  display: none;
+}
+
+.content-table:hover .sub-menu-1 {
+  display: block;
+  position: absolute;
+  margin-top: 15px;
+  margin-left: -15px;
+  box-shadow: 0px 0px 12px #00000070;
+  opacity: 1;
+}
+.content-table:hover .sub-menu-1 ul {
+  display: block;
+  margin: 10px;
 }
