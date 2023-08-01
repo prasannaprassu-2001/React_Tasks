@@ -15,7 +15,13 @@ body {
   margin: 5px 10px;
 }
 
-.cont {
+.custom-data {
+  background-color: #707070;
+  line-height: 4;
+  color: white;
+}
+
+.cus-dynamic-header {
   margin-top: 2rem;
 }
 
@@ -24,21 +30,17 @@ body {
   font-size: 0, 9em;
   min-width: 400px;
 }
-
 .content-table thead tr {
   text-align: left;
   font-weight: bold;
 }
-
-.content-table th select {
+.content-table th {
   font-weight: 700;
 }
-
 .content-table th,
 .content-table td {
   padding: 17px 15px;
 }
-
 .content-table tbody tr {
   border-bottom: 15px solid #ddd;
   border-left: 5px solid transparent;
@@ -50,94 +52,11 @@ body {
 }
 
 button {
-  margin-left: 30%;
+  margin-left: 40%;
   border-radius: 10px;
 }
 
-.select-node {
-  width: 220px;
-  opacity: 1;
-  background: transparent url("img/Image 7.png") 0% 0% no-repeat padding-box;
-}
-
-.content-table th .select-node ::after {
-  transform: translate(rotate(30deg));
-  color: blue;
-}
-
-.custom-select {
-  position: relative;
-  font-family: Arial;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4392156863);
-}
-
-.custom-select select {
-  display: none;
-}
-
-.select-selected {
-  background-color: rgb(248, 249, 250);
-  position: absolute;
-  display: flex;
-  width: 9rem;
-  margin-top: 2rem;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: -14px;
-  right: 60px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #070707 transparent transparent transparent;
-}
-
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #f70808 transparent;
-  top: -15px;
-}
-
-.select-items div,
-.select-selected {
-  color: #898484;
-  font-size: 0.8rem;
-  width: 12rem;
-  padding: 8px 16px;
-  margin-top: 0;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-}
-
-.select-items {
-  position: absolute;
-  border: 6px solid transparent;
-  background-color: rgb(255, 255, 255);
-  top: 100%;
-  left: -100px;
-  width: 13rem;
-  right: 0;
-  z-index: 99;
-}
-
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover,
-.same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.custom {
+.custom-dynamic-mobile {
   background-color: #707070;
   width: 100%;
   font-size: 20px;
@@ -147,13 +66,13 @@ button {
   display: flex;
   align-items: center;
 }
-.custom h2 {
+.custom-dynamic-mobile h2 {
   width: 15rem;
   line-height: 1.5;
   display: inline-block;
 }
 
-.customs {
+.dynamic-mobile-list {
   display: inline-block;
   background-color: #ffffff;
   box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.1607843137);
@@ -162,19 +81,19 @@ button {
   margin-left: 35px;
   margin-bottom: 20px;
 }
-.customs p {
+.dynamic-mobile-list p {
   width: 16rem;
 }
-.customs-ol {
+.dynamic-mobile-list-ol {
   display: flex;
   gap: 2rem;
   margin-top: 1rem;
   line-height: 2;
 }
-.customs-ol ul {
+.dynamic-mobile-list-ol ul {
   list-style: none;
 }
-.customs-ol-ul {
+.dynamic-mobile-list-ol-ul {
   color: black;
   font-weight: bold;
 }
@@ -183,13 +102,6 @@ button {
   text-align: center;
   margin-top: 20%;
   margin-bottom: 5rem;
-}
-
-button {
-  width: 8rem;
-  border-radius: 3rem;
-  line-height: 2;
-  margin-left: 45%;
 }
 
 .mobile-responsive {
