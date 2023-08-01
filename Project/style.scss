@@ -22,16 +22,11 @@ h3 {
   font-weight: bold;
 }
 .content-table th select {
-  background-color: rgb(235, 231, 231);
-  border: none;
-
-  & option {
-    border-bottom: 2px solid rgb(221, 92, 92);
-  }
+  font-weight: 700;
 }
 .content-table th,
 .content-table td {
-  padding: 12px 15px;
+  padding: 17px 15px;
 }
 .content-table tbody tr {
   border-bottom: 15px solid #ddd;
@@ -47,19 +42,84 @@ button {
   margin-left: 30%;
   border-radius: 10px;
 }
-.sub-menu-1 {
+
+.select-node {
+  width: 220px;
+  opacity: 1;
+  background: transparent url("img/Image 7.png") 0% 0% no-repeat padding-box;
+
+}
+
+.content-table th .select-node ::after {
+  transform: translate(rotate(30deg));
+  color: blue;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  box-shadow: 0px 0px 12px #00000070;
+
+}
+
+.custom-select select {
   display: none;
 }
 
-.content-table:hover .sub-menu-1 {
-  display: block;
+.select-selected {
+  background-color: rgb(248, 249, 250);
   position: absolute;
-  margin-top: 15px;
-  margin-left: -15px;
-  box-shadow: 0px 0px 12px #00000070;
-  opacity: 1;
+  display: flex;
+  width: 9rem;
+  margin-top: 2rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  appearance: none;
 }
-.content-table:hover .sub-menu-1 ul {
-  display: block;
-  margin: 10px;
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: -14px;
+  right: 60px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #070707 transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #f70808 transparent;
+  top: -15px;
+}
+
+.select-items div,.select-selected {
+  color: #898484;
+  font-size: .8rem;
+  width: 12rem;
+  padding: 8px 16px;
+  margin-top: 0;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  border: 6px solid transparent;
+  background-color: rgb(255, 255, 255);
+  top: 100%;
+  left: -100px;
+  width: 13rem;
+  right: 0;
+  z-index: 99;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
