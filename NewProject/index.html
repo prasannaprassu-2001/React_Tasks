@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="table-data">
+
+    <div class="custom">
+      <h2>Dynamic  course  list table</h2>
+    </div>
+     <div>
+      <h3 class="cont">View courses editable H3 title</h3>
+    
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>COURSE NAME</th>
+            <th>COURSE CODE</th>
+            <th>
+              STUDY MODE<div class="custom-select">
+                <select>
+                  <option></option>
+                  <option>Greater Brisbane</option>
+                  <option>Gold Coast</option>
+                  <option>Sunshine Coast</option>
+                  <option>Darling Downs and South West</option>
+                  <option>Wide Bay Burnett</option>
+                  <option>Far North Queensland</option>
+                  <option>North Queensland</option>
+                </select>
+              </div>
+            </th>
+            <th>
+              LOCATION<div class="custom-select">
+                <select>
+                  <option></option>
+                  <option>Greater Brisbane</option>
+                  <option>Gold Coast</option>
+                  <option>Sunshine Coast</option>
+                  <option>Darling Downs and South West</option>
+                  <option>Wide Bay Burnett</option>
+                  <option>Far North Queensland</option>
+                  <option>North Queensland</option>
+                </select>
+              </div>
+            </th>
+            <th>
+              CAMPUS<div class="custom-select">
+                <select>
+                  <option></option>
+                  <option>Greater Brisbane</option>
+                  <option>Gold Coast</option>
+                  <option>Sunshine Coast</option>
+                  <option>Darling Downs and South West</option>
+                  <option>Wide Bay Burnett</option>
+                  <option>Far North Queensland</option>
+                  <option>North Queensland</option>
+                </select>
+              </div>
+            </th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr>
+            <td>Certificate III in Early Childhood Education and Care</td>
+            <td>CHC30121</td>
+            <td>Various</td>
+            <td>Various</td>
+            <td>Various</td>
+          </tr>
+          <tr>
+            <td>Hazardous Areas Refresher Training</td>
+            <td>NONAC06008</td>
+            <td>On campus</td>
+            <td>Greater Brisbane</td>
+            <td>South Bank</td>
+          </tr>
+          <tr>
+            <td>Electrical Installation and Design Theory</td>
+            <td>NONAC03029</td>
+            <td>Various</td>
+            <td>Various</td>
+            <td>Various</td>
+          </tr>
+          <tr>
+            <td>Certificate III in Electrotechnology Electrician</td>
+            <td>UEE30811</td>
+            <td>On campus</td>
+            <td>Greater Brisbane</td>
+            <td>Southbank</td>
+          </tr>
+          <tr>
+            <td>Skills Maintenance and Testing for Electrical Licence Renewal</td>
+            <td>CHC34621</td>
+            <td>Apprentice and traineeship</td>
+            <td>Online</td>
+            <td>Various</td>
+          </tr>
+          <tr>
+            <td>
+              Qualified Business Person (QBP) Electrical Contractor Licence Skill
+              set
+            </td>
+            <td>RE30121</td>
+            <td>Various</td>
+            <td>Various</td>
+            <td>Various</td>
+          </tr>
+          <tr>
+            <td>Electrical Installation and Design Theory</td>
+            <td>NONAC03029</td>
+            <td>Various</td>
+            <td>Various</td>
+            <td>Various</td>
+          </tr>
+          <tr>
+            <td>Certificate III in Electrotechnology Electrician</td>
+            <td>UEE30811</td>
+            <td>On campus</td>
+            <td>Greater Brisbane</td>
+            <td>Southbank</td>
+          </tr>
+          <tr>
+            <td>Certificate III in Electrotechnology Electrician</td>
+            <td>UEE30811</td>
+            <td>On campus</td>
+            <td>Greater Brisbane</td>
+            <td>Southbank</td>
+          </tr>
+          <tr>
+            <td>Certificate III in Electrotechnology Electrician</td>
+            <td>UEE30811</td>
+            <td>On campus</td>
+            <td>Greater Brisbane</td>
+            <td>Southbank</td>
+          </tr>
+          <tr>
+            <td>Electrical Installation and Design Theory</td>
+            <td>NONAC03029</td>
+            <td>Various</td>
+            <td>Various</td>
+            <td>Various</td>
+          </tr>
+          <tr>
+            <td>Electrical Installation and Design Theory</td>
+            <td>NONAC03029</td>
+            <td>Various</td>
+            <td>Various</td>
+            <td>Various</td>
+          </tr>
+          <tr>
+            <td>Electrical Installation and Design Theory</td>
+            <td>NONAC03029</td>
+            <td>Various</td>
+            <td>Various</td>
+            <td>Various</td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <button id="more" onclick="Click()">Load More...</button>
+  
+      <div id="list" style="display: none">
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th>COURSE NAME</th>
+              <th>COURSE CODE</th>
+              <th>
+                STUDY MODE<div class="custom-select">
+                  <select>
+                    <option></option>
+                    <option>Greater Brisbane</option>
+                    <option>Gold Coast</option>
+                    <option>Sunshine Coast</option>
+                    <option>Darling Downs and South West</option>
+                    <option>Wide Bay Burnett</option>
+                    <option>Far North Queensland</option>
+                    <option>North Queensland</option>
+                  </select>
+                </div>
+              </th>
+              <th>
+                LOCATION<div class="custom-select">
+                  <select>
+                    <option></option>
+                    <option>Greater Brisbane</option>
+                    <option>Gold Coast</option>
+                    <option>Sunshine Coast</option>
+                    <option>Darling Downs and South West</option>
+                    <option>Wide Bay Burnett</option>
+                    <option>Far North Queensland</option>
+                    <option>North Queensland</option>
+                  </select>
+                </div>
+              </th>
+              <th>
+                CAMPUS <div class="custom-select">
+                  <select>
+                    <option></option>
+                    <option>Greater Brisbane</option>
+                    <option>Gold Coast</option>
+                    <option>Sunshine Coast</option>
+                    <option>Darling Downs and South West</option>
+                    <option>Wide Bay Burnett</option>
+                    <option>Far North Queensland</option>
+                    <option>North Queensland</option>
+                  </select>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Electrical Installation and Design Theory</td>
+              <td>NONAC03029</td>
+              <td>Various</td>
+              <td>Various</td>
+              <td>Various</td>
+            </tr>
+            <tr>
+              <td>Certificate III in Electrotechnology Electrician</td>
+              <td>UEE30811</td>
+              <td>On campus</td>
+              <td>Greater Brisbane</td>
+              <td>Southbank</td>
+            </tr>
+            <tr>
+              <td>
+                Skills Maintenance and Testing for Electrical Licence Renewal
+              </td>
+              <td>CHC34621</td>
+              <td>Apprentice and traineeship</td>
+              <td>Online</td>
+              <td>Various</td>
+            </tr>
+            <tr>
+              <td>
+                Qualified Business Person (QBP) Electrical Contractor Licence
+                Skill set
+              </td>
+              <td>RE30121</td>
+              <td>Various</td>
+              <td>Various</td>
+              <td>Various</td>
+            </tr>
+            <tr>
+              <td>Electrical Installation and Design Theory</td>
+              <td>NONAC03029</td>
+              <td>Various</td>
+              <td>Various</td>
+              <td>Various</td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="less" onclick="Show()">Load Less...</button>
+      </div>
+    </div>
+  
+      <script>
+  
+        let Click = () => {
+          const items = (document.getElementById("list").style.display = "block");
+          const item = (document.getElementById("more").style.display = "none");
+        };
+  
+        let Show = () => {
+          const items = (document.getElementById("list").style.display = "none");
+          const item = (document.getElementById("more").style.display = "block");
+        };
+  
+      </script>
+  
+  
+  
+  
+     </div>
+    <div class="mobile-responsive">
+    <div class="custom">
+      <h2>Dynamic  course  list table</h2>
+    </div>
+    <div>
+ <h3 class="content">View courses editable H3 title</h3>
+ </div>
+    <div class="customs">
+        <p>Certificate III in Early Childhood Education and Care</p>
+
+      <div class="customs-ol">
+        <ul class="customs-ol-ul">
+          <li>COURSE CODE</li>
+          <li>STUDY MODE</li>
+          <li>LOCATION</li>
+          <li>CAMPUS</li>
+        </ul>
+        <ul class="customs-ol-ul-li">
+          <li>CHC30121</li>
+          <li>On campus</li>
+          <li>Various</li>
+          <li>Various</li>
+        </ul>
+      </div>
+    </div>
+    <div class="customs">
+        <p>Hazardous Areas Refresher Training</p>
+
+      <div class="customs-ol">
+        <ul class="customs-ol-ul">
+          <li>COURSE CODE</li>
+          <li>STUDY MODE</li>
+          <li>LOCATION</li>
+          <li>CAMPUS</li>
+        </ul>
+        <ul class="customs-ol-ul-li">
+          <li>CHC30121</li>
+          <li>On campus</li>
+          <li>Various</li>
+          <li>Various</li>
+        </ul>
+      </div>
+    </div>
+    <div class="customs">
+        <p>Electrical Installation and Design Theory </p>
+
+      <div class="customs-ol">
+        <ul class="customs-ol-ul">
+          <li>COURSE CODE</li>
+          <li>STUDY MODE</li>
+          <li>LOCATION</li>
+          <li>CAMPUS</li>
+        </ul>
+        <ul class="customs-ol-ul-li">
+          <li>CHC30121</li>
+          <li>On campus</li>
+          <li>Various</li>
+          <li>Various</li>
+        </ul>
+      </div>
+    </div>
+    <div class="customs">
+        <p>Certificate III in Electrotechnology Electrician</p>
+
+      <div class="customs-ol">
+        <ul class="customs-ol-ul">
+          <li>COURSE CODE</li>
+          <li>STUDY MODE</li>
+          <li>LOCATION</li>
+          <li>CAMPUS</li>
+        </ul>
+        <ul class="customs-ol-ul-li">
+          <li>CHC30121</li>
+          <li>On campus</li>
+          <li>Various</li>
+          <li>Various</li>
+        </ul>
+      </div>
+    </div>
+    <div class="customs">
+        <p>Skills Maintenance and Testing for Electrical Licence Renewal</p>
+
+      <div class="customs-ol">
+        <ul class="customs-ol-ul">
+          <li>COURSE CODE</li>
+          <li>STUDY MODE</li>
+          <li>LOCATION</li>
+          <li>CAMPUS</li>
+        </ul>
+        <ul class="customs-ol-ul-li">
+          <li>CHC30121</li>
+          <li>On campus</li>
+          <li>Various</li>
+          <li>Various</li>
+        </ul>
+      </div>
+    </div>
+    <div class="customs">
+        <p>Qualified Business Person (QBP) Electrical Contractor Licence Skill Set</p>
+
+      <div class="customs-ol">
+        <ul class="customs-ol-ul">
+          <li>COURSE CODE</li>
+          <li>STUDY MODE</li>
+          <li>LOCATION</li>
+          <li>CAMPUS</li>
+        </ul>
+        <ul class="customs-ol-ul-li">
+          <li>CHC30121</li>
+          <li>On campus</li>
+          <li>Various</li>
+          <li>Various</li>
+        </ul>
+      </div>
+    </div>
+   
+    </div>
+        
+  </div>
+ <script src="./script.js"></script>
+  </body>
+</html>
