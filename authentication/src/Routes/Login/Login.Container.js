@@ -10,7 +10,7 @@ import withNavigate from "./withNavigate";
       email: "",
       password: "",
       emailData: false,
-      loginSuccess: false,
+      authenticationSuccess: false,
     };
   }
 
@@ -37,7 +37,7 @@ import withNavigate from "./withNavigate";
     } else {
 
       this.setState({
-        loginSuccess: true,
+        authenticationSuccess: true,
       })
 
       existingLogins.push({ email, password });
@@ -45,8 +45,7 @@ import withNavigate from "./withNavigate";
       sessionStorage.setItem("logins", JSON.stringify(existingLogins));
     
       setTimeout(() => {
-        // this.props.navigate('./Dashboard');
-        this.setState({loginSuccess:true});
+        this.setState({authenticationSuccess:true});
       }, 1500);
     
     }
@@ -56,10 +55,10 @@ import withNavigate from "./withNavigate";
     })
   };
   render() {
-     const{loginSuccess}=this.state
+     const{authenticationSuccess}=this.state
     return (
       <div>
-        {loginSuccess? <Dashboard />: <LoginComponent 
+        {authenticationSuccess? <Dashboard />: <LoginComponent 
           {...this.state}
           handleInputChange={this.handleInputChange}
           handleLogin={this.handleLogin}
