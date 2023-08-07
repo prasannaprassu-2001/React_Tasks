@@ -58,7 +58,6 @@ body{
   transform: translate(-50%,-50%);
   text-align: center;
   color:#fff;
-// margin-top: -8rem;
 }
 .content h1{
     font-size: 70px;
@@ -104,4 +103,29 @@ span{
         display:none;
     }
 }
+
+
+@media only screen and (max-width:380px){
+    .navbar li{
+      padding:0 25px;
+    }
+    .flex-div{
+      padding: 20px 0;
+    }
+    .content h1{
+      font-size: 60px;
+    }
+  }
+  
+  @media only screen and (max-width:280px){
+    .navbar li{
+      padding:0 16px;
+    }
+    .flex-div{
+      padding: 20px 0;
+    }
+    .content h1{
+      font-size: 60px;
+    }
+  }
     

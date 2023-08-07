@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import LoginComponent from "./Login.Component";
+import Dashboard from "../Dashboard";
 import withNavigate from "./withNavigate";
 
  class LoginContainer extends PureComponent {
@@ -21,9 +22,10 @@ import withNavigate from "./withNavigate";
 
   handleLogin = (event) => {
     event.preventDefault();
+
     const { email, password } = this.state;
 
-    const existingLogins = JSON.parse(localStorage.getItem("logins")) || [];
+    const existingLogins = JSON.parse(sessionStorage.getItem("logins")) || [];
 
     const emailExists = existingLogins.some((login) => login.email === email);
 
@@ -40,10 +42,11 @@ import withNavigate from "./withNavigate";
 
       existingLogins.push({ email, password });
 
-      localStorage.setItem("logins", JSON.stringify(existingLogins));
+      sessionStorage.setItem("logins", JSON.stringify(existingLogins));
     
       setTimeout(() => {
-        this.props.navigate('./Dashboard');
+        // this.props.navigate('./Dashboard');
+        this.setState({loginSuccess:true});
       }, 1500);
     
     }
@@ -53,14 +56,15 @@ import withNavigate from "./withNavigate";
     })
   };
   render() {
-
+     const{loginSuccess}=this.state
     return (
       <div>
-        <LoginComponent
-        {...this.state}
+        {loginSuccess? <Dashboard />: <LoginComponent 
+          {...this.state}
           handleInputChange={this.handleInputChange}
           handleLogin={this.handleLogin}
-        />
+        />}
+       
       </div>
     );
   }

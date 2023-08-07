@@ -105,3 +105,31 @@ margin-top: 22rem;
   100%  { left:50%; top:-20rem;}
 }
 
+
+@media only screen and (max-width: 480px) {
+  .cover{
+    width: 20em;
+    height:32em;
+  }
+}
+
+
+@media only screen and (max-width: 320px) {
+  .cover{
+    width: 20em;
+    height: 28em;
+    top: 45%;
+  }
+  
+}
+
+
+@media only screen and (max-width: 280px) {
+  .cover{
+    width: 17em;
+    height: 26em;
+    top: 60%;
+  }
+  
+}
+

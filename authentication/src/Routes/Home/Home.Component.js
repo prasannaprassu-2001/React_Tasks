@@ -22,7 +22,7 @@ export default class HomeComponent extends PureComponent {
                
         </nav>
         <div className='content'>
-          <h1>Welcome to COdilar</h1>
+          <h1>Welcome to Codilar</h1>
           <p>Subscribe Codilar Channel to wach more React videos,press the bell icon to get latest updates.</p>
           <div>
             <button className="btn" type="button"><span></span>WATCH MORE</button>

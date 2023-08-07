@@ -20,6 +20,7 @@ export default class DashComponent extends PureComponent {
              
                 </ul>
                 </div>
+
                
         </nav>
         {logoutSuccess &&
